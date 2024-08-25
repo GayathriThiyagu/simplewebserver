@@ -1,15 +1,30 @@
+import platform
 from http.server import HTTPServer,BaseHTTPRequestHandler
 
+system_name = platform.system()
+node_name = platform.node()
+release = platform.release()
+version = platform.version()
+machine = platform.machine()
+processor = platform.processor()
+
 content='''
-<!doctype html>
-<html>
+<html lang="en">
 <head>
-<title> My Web Server</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My System Configuration</title>
 </head>
 <body>
-<h1>Hello!</h1>
-<h2>My name is Roopak</h2>
-<h3>Goodbye!</h3>
+    <h1>My System Configuration</h1>
+    <ul>
+        <li>'''+system_name+'''</li>
+        <li>'''+node_name+'''</li>
+        <li>'''+release+'''</li>  
+        <li>'''+version+'''</li>  
+        <li>'''+machine+'''</li>  
+        <li>'''+processor+'''</li>  
+    </ul>
 </body>
 </html>
 '''
