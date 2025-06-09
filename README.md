@@ -1,7 +1,6 @@
 # EX01 Developing a Simple Webserver
-
 ## AIM:
-To develop a simple webserver to serve html pages and display the configuration details of laptop.
+To develop a simple webserver to serve html pages and display the list of protocols in TCP/IP Protocol Suite.
 
 ## DESIGN STEPS:
 ### Step 1: 
@@ -14,61 +13,50 @@ Design of webserver workflow.
 Implementation using Python code.
 
 ### Step 4:
-Serving the HTML pages.
+Import the necessary modules.
 
 ### Step 5:
-Testing the webserver.
+Define a custom request handler.
+
+### Step 6:
+Start an HTTP server on a specific port.
+
+### Step 7:
+Run the Python script to serve web pages.
+
+### Step 8:
+Serve the HTML pages.
+
+### Step 9:
+Start the server script and check for errors.
+
+### Step 10:
+Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
-```python
-import platform
-from http.server import HTTPServer,BaseHTTPRequestHandler
-
-system_name = platform.system()
-node_name = platform.node()
-release = platform.release()
-version = platform.version()
-machine = platform.machine()
-processor = platform.processor()
-
-content='''
+```
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My System Configuration</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>My System Configuration</h1>
-    <ul>
-        <li>'''+system_name+'''</li>
-        <li>'''+node_name+'''</li>
-        <li>'''+release+'''</li>  
-        <li>'''+version+'''</li>  
-        <li>'''+machine+'''</li>  
-        <li>'''+processor+'''</li>  
-    </ul>
+    <h1>Fundamental of Web Application</h1>
+    <h2>Fundamental of Web Application</h2>
+    <h3>Fundamental of Web Application</h3>
+    <h4>Fundamental of Web Application</h4>
+    <h5>Fundamental of Web Application</h5>
+    <h6>Fundamental of Web Application</h6>
 </body>
 </html>
-'''
-
-class MyServer(BaseHTTPRequestHandler):
-    def do_GET(self):
-        print("Get request received...")
-        self.send_response(200) 
-        self.send_header("content-type", "text/html")       
-        self.end_headers()
-        self.wfile.write(content.encode())
-
-print("This is my webserver") 
-server_address =('',8000)
-httpd = HTTPServer(server_address,MyServer)
-httpd.serve_forever()
 ```
 
+
 ## OUTPUT:
-![alt text](image-1.png)
-![alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/2218d205-1a9c-4e84-bec0-06b988bfe98e)
+
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
